@@ -20,3 +20,5 @@ app.listen(5000, () => {
 		.then(() => console.log('Successfully connected to database'))
 		.catch(err => console.error('Could not connect to the database: ', err.message));
 });
+
+export default app;

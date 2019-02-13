@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
+		"test": "nyc mocha",
 		"start": "nodemon --exec babel-node src/app.js"
 	},
 	"keywords": [],
@@ -24,5 +24,19 @@
 		"nodemon": "^1.18.10",
 		"pg": "^7.8.0",
 		"sequelize": "^4.42.0"
+	},
+	"devDependencies": {
+		"@babel/polyfill": "^7.2.5",
+		"@babel/register": "^7.0.0",
+		"chai": "^4.2.0",
+		"chai-http": "^4.2.1",
+		"coveralls": "^3.0.2",
+		"mocha": "^5.2.0",
+		"nyc": "^13.2.0"
+	},
+	"nyc": {
+		"require": ["@babel/register", "@babel/polyfill"],
+		"exclude": ["**/*.spec.js", "build"],
+		"include": ["./src/**/*.js"]
 	}
 }
