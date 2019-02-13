@@ -4,8 +4,9 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"test": "nyc mocha",
-		"start": "nodemon --exec babel-node src/app.js"
+		"test": "nyc --reporter=text mocha --timeout=3000 --recursive --exit",
+		"start": "nodemon --exec babel-node src/app.js",
+		"db:migrate": "babel-node src/config/init.js"
 	},
 	"keywords": [],
 	"author": "",

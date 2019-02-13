@@ -22,7 +22,7 @@ describe('POST /users/1/posts/new', () => {
 			})
 			.end((err, res) => {
 				expect(res).to.have.status(201);
-				expect(res.body).to.be.an('object');
+				expect(res.body.id).to.be.a('number');
 				done(err);
 			});
 	});
