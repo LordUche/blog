@@ -6,5 +6,11 @@ sequelize
 	.authenticate()
 	.then(() => User.sync())
 	.then(() => Post.sync())
-	.then(() => console.log('Successfully connected to database'))
-	.catch(err => console.error('Could not connect to the database: ', err.message));
+	.then(() => {
+		console.log('Successfully connected to database');
+		process.exit(0);
+	})
+	.catch(err => {
+		console.error('Could not connect to the database: ', err.message);
+		process.exit(1);
+	});
